@@ -2,19 +2,19 @@
 #include "sort.h"
 #include <stdlib.h>
 
-void print_my_array(int n)
+/**
+ * swap - this functio id used to swap values
+ * @n: value to be swap
+ * @m: the other value to be swaped
+ * Return: null
+ */
+void swap(int *n, int *m)
 {
-	if (n < 0)
-	{
-		putchar(' ');
-		n = -n;
-	}
-	if (n / 10 != 0)
-	{
-		print_my_array(n / 10);
-	}
-
-	putchar('0' + n % 10);
+	int temp;
+	
+	temp = *n;
+	*n = *m;
+	*m = temp;
 }
 /**
  * bubble_sort - this prototype is used to sort
@@ -26,7 +26,7 @@ void print_my_array(int n)
 void bubble_sort(int *array, size_t size)
 {
 	int temp;
-	size_t i, j, k;
+	size_t i, j;
 
 	for (i = 0; i <= size - 1; i++)
 	{
@@ -37,11 +37,8 @@ void bubble_sort(int *array, size_t size)
 				temp = array[j];
 				array[j] = array[j + 1];
 				array[j + 1] = temp;
-				for (k = 0; k < size; k++)
-				{
-					print_my_array(array[k]);
-					putchar(' ');
-				}
+				print_array(array, size);
+				putchar(' ');
 				putchar('\n');
 			}
 		}
