@@ -1,3 +1,3 @@
-Best Case in the 0-bubble_sort is O(n)
-Worst Case in the 0-bubble_sort is O(n^2)
-Average Case in the 0-bubble_sort is O(n^2)/2
+O(n)
+O(n^2)
+O(n^2)
