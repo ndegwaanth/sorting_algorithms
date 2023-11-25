@@ -18,19 +18,21 @@ void swap(int *n, int *m)
 
 /**
  * lomuto_partition - partion the array
- * @arraythe sub array to sort
+ * @array: the sub array to sort
  * @low_bound: the lower bound of the array
  * @high_bound: the higher bound of the array
+ * @size: the length of the array
  * Return: the element beign swaped
  */
-int lomuto_partition(int *array, int low_bound, int high_bound, size_t size) {
+int lomuto_partition(int *array, int low_bound, int high_bound, size_t size)
+{
 	int pivot = array[high_bound];
 	int i = low_bound - 1;
 	int j;
 
 	for (j = low_bound; j < high_bound; j++)
 	{
-		if (array[j] <= pivot) 
+		if (array[j] <= pivot)
 		{
 			i++;
 			swap(&array[i], &array[j]);
@@ -40,18 +42,21 @@ int lomuto_partition(int *array, int low_bound, int high_bound, size_t size) {
 
 	swap(&array[i + 1], &array[high_bound]);
 	print_array(array, size);
-	return i + 1;
+	return (i + 1);
 }
 
 /**
- * lumuto - sort the array
+ * lomuto - sort the array
+ *
  * @array: arrat to be sorted
  * @low_bound: the lower bound
  * @high_bound: lower bound of the array
+ * @size: the slenght of the array
  * Return: null
  */
-void lomuto(int array[], int low_bound, int high_bound, size_t size) {
-	if (low_bound < high_bound) 
+void lomuto(int array[], int low_bound, int high_bound, size_t size)
+{
+	if (low_bound < high_bound)
 	{
 		int pivot_index = lomuto_partition(array, low_bound, high_bound, size);
 
