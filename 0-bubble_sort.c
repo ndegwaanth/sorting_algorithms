@@ -1,21 +1,7 @@
 #include <stdio.h>
 #include "sort.h"
-#include <stdlib.h>
+#include <stddef.h>
 
-/**
- * swap - this functio id used to swap values
- * @n: value to be swap
- * @m: the other value to be swaped
- * Return: null
- */
-void swap(int *n, int *m)
-{
-	int temp;
-	
-	temp = *n;
-	*n = *m;
-	*m = temp;
-}
 /**
  * bubble_sort - this prototype is used to sort
  * an array in ascending order using bubble sort
